@@ -1,0 +1,31 @@
+.cart-modal{
+    border-radius: 1em;
+    width: 40%;
+    margin: 3em auto 0;
+    padding: 2em;
+    background-color: white;
+    position: relative;
+}
+.modal-btns-container{
+    width: 300em;
+    position: absolute;
+    right: 0;
+}
+
+
+.menu-cart-title , .menu-cart-price , .amount-label{
+    font-weight: bold;
+    margin: 4px 0;
+}
+.menu-cart-amount {
+    margin: 10px 0;
+}
+.amount-input {
+    width: 5em;
+    height: 2em;
+    margin-left: 1em;
+}
+.menu-cart-price{
+    font-size: 1.2em;
+    color: rgb(255, 68, 0);
+}

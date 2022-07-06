@@ -1,0 +1,33 @@
+.btn{
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+.btn-primary{
+    width: 8em;
+    height: 2.5em;
+    border-radius: 5em;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.btn-secondary{
+    width: 3.5em;
+    height: 2em;
+    border-radius: 1em;
+}
+
+
+
+
+.add-btn{
+    background-color: #8a2b06;
+}
+.cancel-btn{
+    background-color: white;
+    color: #8a2b06;
+    border : #8a2b06 solid 1px;
+}
+.order-btn{
+    background-color: #8a2b06;
+    color: white;
+}

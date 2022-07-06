@@ -1,0 +1,11 @@
+.intro-section{
+    background-color: #2a2929;
+    color: white;
+    width: 50%;
+    padding: 2em;
+    border-radius: 1em;
+    margin: -10em auto 0;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+}
