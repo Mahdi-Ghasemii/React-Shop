@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useState , useContext } from "react";
 import Button from "../../../UI/Button/Button";
 import "./MenuCart.css"
+import cartContext from "../../../../contexts/cart-context";
 
 const MenuCart = (props) => {
-    const id = `amount-${props.id}`
+    const id = `amount-${props.id}`;
+    const [cartsInfo , setCartInfo] =  useContext(cartContext);
     const [amount , setAmount] = useState(1);
 
     const amountChangeHandler = (event) => {
         setAmount(event.target.value);
+    }
+    const addBtnClickHandler = () => {
+        console.log(amount)
+        cartsInfo.addItem(props.name , props.price , amount);
     }
 
     return (
@@ -20,9 +26,9 @@ const MenuCart = (props) => {
             <div>
                 <div className="menu-cart-amount">
                     <label className="amount-label" htmlFor={id}>Amount</label>
-                    <input onChange={amountChangeHandler} className="amount-input" id={id} type="text" name={id} value={amount}></input>
+                    <input type="number" onChange={amountChangeHandler} className="amount-input" id={id}  name={id} value={amount}></input>
                 </div>
-                <Button title="+ Add" className="btn-primary add-btn"></Button>
+                <Button onClick={addBtnClickHandler} title="+ Add" className="btn-primary add-btn"></Button>
             </div>
         </section>
     );

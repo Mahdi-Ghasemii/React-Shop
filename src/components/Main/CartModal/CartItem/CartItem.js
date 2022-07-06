@@ -13,7 +13,7 @@ const CartItem = (props) => {
             </header>
             <div>
                 <p>{props.price}</p>
-                <input type="number" className="num-ordered" disabled value={"x"+props.number}></input>
+                <input type="text" className="num-ordered" disabled value={"x"+props.number}></input>
             </div>
         </section>
     );
