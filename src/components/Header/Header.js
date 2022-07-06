@@ -1,11 +1,11 @@
 import CartButton from './CartButton/CartButton';
 import './Header.css'
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className="header">
             <h1>React Meals</h1>
-            <CartButton></CartButton>
+            <CartButton onShowCartModal={props.onShowCartModal}></CartButton>
         </header>
     );
 }

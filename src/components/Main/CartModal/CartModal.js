@@ -23,14 +23,19 @@ const cartsInfo = [
     }
 ]
 
-const CartModal = () => {
+const CartModal = (props) => {
+
+    const order = () => {
+        console.log("Order ...")
+    }
+
     const totalAmount = 0;
     return (
         <div className="cart-modal">
             <div className="cart-items-container">
                 {
                     cartsInfo.map(cart => {
-                        return <CartItem {...cart} key={cart.id}></CartItem>
+                        return <CartItem {...cart}></CartItem>
                     })
                 }
             </div>
@@ -39,8 +44,8 @@ const CartModal = () => {
                 <p>${totalAmount}</p>
             </div>
             <div className="modal-btns-container">
-                <Button title="Close" className="btn-primary close-btn"></Button>
-                <Button title="Order" className="btn-primary order-btn"></Button>
+                <Button onClick={props.onHideCartModal} title="Close" className="btn-primary close-btn"></Button>
+                <Button  onClick={order} title="Order" className="btn-primary order-btn"></Button>
             </div>
 
         </div>
@@ -48,9 +53,9 @@ const CartModal = () => {
     );
 }
 
-const BackdDrop = () => {
+const BackdDrop = (props) => {
     return (
-        <div className="backdrop"></div>
+        <div className="backdrop" onClick={props.onHideCartModal}></div>
     );
 }
 export { CartModal , BackdDrop };
