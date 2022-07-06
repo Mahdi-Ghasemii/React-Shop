@@ -1,3 +1,10 @@
 .cart-item{
     background-color: white;
+    margin-top: 8px;
+}
+
+.cart-item-header{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
 }

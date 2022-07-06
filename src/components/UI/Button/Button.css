@@ -13,16 +13,17 @@
 .btn-secondary{
     width: 3.5em;
     height: 2em;
-    border-radius: 1em;
+    border-radius: 8px;
+    color: #8a2b06;
+    background-color: white;
+    margin-right: 4px;
 }
-
-
 
 
 .add-btn{
     background-color: #8a2b06;
 }
-.cancel-btn{
+.close-btn , .btn-secondary{
     background-color: white;
     color: #8a2b06;
     border : #8a2b06 solid 1px;

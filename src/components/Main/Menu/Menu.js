@@ -1,5 +1,6 @@
 import MenuCart from "./MenuCart/MenuCart";
 import "./Menu.css"
+import CartModal from "../CartModal/CartModal";
 
 const menu_info = [
     {
