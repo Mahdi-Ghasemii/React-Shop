@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext , useState , useEffect} from "react";
 import Button from "../../UI/Button/Button";
 import CartItem from "./CartItem/CartItem";
 import "./CartModal.css";
@@ -6,20 +6,41 @@ import cartContext from "../../../contexts/cart-context";
 
 
 const CartModal = (props) => {
-
-    const [cartsInfo , setCartInfo] = useContext(cartContext);
-    console.log(cartsInfo)
+    
+    const [isCartEmpty , setIsCartEmpty] = useState(true);
+    const cartsInfo = useContext(cartContext);
+    let totalAmount = cartsInfo.items.reduce((total,item) => 
+    total + (item.number * item.price), 0);
+    totalAmount.toFixed(2);
+    
+    console.log("isCartEmpty" ,isCartEmpty)
+    const addItemHandler = (id) => {
+        const itemIndex = cartsInfo.items.findIndex(item => item.id === id);
+        const newPrice = cartsInfo.items[itemIndex].price / cartsInfo.items[itemIndex].number;
+        cartsInfo.addItem({...cartsInfo.items[itemIndex] , "number" : 1 , "price" : newPrice});
+    } 
+    const removeItemHandler = (id) => {
+        cartsInfo.removeItem(id);
+    }
     const order = () => {
         console.log("Order ...")
     }
 
-    const totalAmount = 0;
+    useEffect(() => {
+        if(!cartsInfo.items.length && !isCartEmpty){
+            setIsCartEmpty(true);
+        }
+        else if (cartsInfo.items.length && isCartEmpty){
+            setIsCartEmpty(false);
+        }
+    },[cartsInfo.items.length])
+
     return (
         <div className="cart-modal">
             <div className="cart-items-container">
                 {
                     cartsInfo.items.map(cart => {
-                        return <CartItem {...cart}></CartItem>
+                        return <CartItem {...cart} onAdd={addItemHandler} onRemove={removeItemHandler}></CartItem>
                     })
                 }
             </div>
@@ -29,7 +50,7 @@ const CartModal = (props) => {
             </div>
             <div className="modal-btns-container">
                 <Button onClick={props.onHideCartModal} title="Close" className="btn-primary close-btn"></Button>
-                <Button onClick={order} title="Order" className="btn-primary order-btn"></Button>
+                <Button onClick={order} title="Order" className="btn-primary order-btn" disabled={isCartEmpty}></Button>
             </div>
 
         </div>

@@ -7,8 +7,8 @@ const CartItem = (props) => {
             <header className="cart-item-header">
                 <h2>{props.name}</h2>
                 <div>
-                    <Button title="-" className="btn-secondary"></Button>
-                    <Button title="+" className="btn-secondary"></Button>
+                    <Button onClick={props.onRemove.bind(null , props.id)} title="-" className="btn-secondary"></Button>
+                    <Button onClick={props.onAdd.bind(null , props.id)} title="+" className="btn-secondary"></Button>
                 </div>
             </header>
             <div>

@@ -5,15 +5,20 @@ import cartContext from "../../../../contexts/cart-context";
 
 const MenuCart = (props) => {
     const id = `amount-${props.id}`;
-    const [cartsInfo , setCartInfo] =  useContext(cartContext);
+    const cartsInfo =  useContext(cartContext);
     const [amount , setAmount] = useState(1);
 
     const amountChangeHandler = (event) => {
         setAmount(event.target.value);
     }
     const addBtnClickHandler = () => {
-        console.log(amount)
-        cartsInfo.addItem(props.name , props.price , amount);
+        console.log(amount , props.price)
+        cartsInfo.addItem({ 
+            "id" : props.id ,
+            "name" : props.name ,
+            "price" : +props.price ,
+            "number" :+amount
+        });
     }
 
     return (
@@ -21,7 +26,7 @@ const MenuCart = (props) => {
             <div>
                 <p className="menu-cart-title">{props.name}</p>
                 <i>{props.details}</i>
-                <p className="menu-cart-price">{props.price}</p>
+                <p className="menu-cart-price">$ {props.price}</p>
             </div>
             <div>
                 <div className="menu-cart-amount">

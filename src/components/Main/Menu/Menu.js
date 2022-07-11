@@ -5,29 +5,29 @@ const menu_info = [
     {
         name: "Sushi",
         details: "Finest fish and veggist",
-        price : "$ 22.99",
-        "amount-value": 1,
+        price : 22.99,
+        number: 0,
         id: 1
     },
     {
-        name: "Sushi",
+        name: "Rice",
         details: "Finest fish and veggist",
-        price : "$ 22.99",
-        "amount-value": 2,
+        price : 34.78,
+        number: 0,
         id: 2
     },
     {
-        name: "Sushi",
+        name: "Chicken",
         details: "Finest fish and veggist",
-        price : "$ 22.99",
-        "amount-value": 89432,
+        price : 87.45,
+        number: 0,
         id: 3
     },
     {
-        name: "Sushi",
+        name: "Fish",
         details: "Finest fish and veggist",
-        price : "$ 22.99",
-        "amount-value": 1212,
+        price : 21.32,
+        number: 0,
         id: 4
     },
 ]

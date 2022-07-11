@@ -4,10 +4,12 @@ import './CartButton.css';
 
 const CartButton = (props) => {
 
-    const [cartsInfo , setCartInfo] = useContext(cartContext)
+    const cartsInfo = useContext(cartContext)
 
     let numProduct = 0;
-    cartsInfo.items.forEach(item => numProduct += +item.number);
+    cartsInfo.items.forEach(item => {
+        numProduct += +item.number;
+    });
     return (
         <button onClick={props.onShowCartModal} className='button'>
             <svg
