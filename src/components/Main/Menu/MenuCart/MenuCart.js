@@ -1,7 +1,7 @@
 import { useState , useContext } from "react";
 import Button from "../../../UI/Button/Button";
-import "./MenuCart.css"
 import cartContext from "../../../../contexts/cart-context";
+import '../../../../styles/MenuCart.css'
 
 const MenuCart = (props) => {
     const id = `amount-${props.id}`;
@@ -15,7 +15,7 @@ const MenuCart = (props) => {
         console.log(amount , props.price)
         cartsInfo.addItem({ 
             "id" : props.id ,
-            "name" : props.name ,
+            "name" : props.ti ,
             "price" : +props.price ,
             "number" :+amount
         });
@@ -33,7 +33,7 @@ const MenuCart = (props) => {
                     <label className="amount-label" htmlFor={id}>Amount</label>
                     <input type="number" onChange={amountChangeHandler} className="amount-input" id={id}  name={id} value={amount}></input>
                 </div>
-                <Button onClick={addBtnClickHandler} title="+ Add" className="btn-primary add-btn"></Button>
+                <Button onClick={addBtnClickHandler} title="+ Add" className="btn-primary order-btn"></Button>
             </div>
         </section>
     );

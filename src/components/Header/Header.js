@@ -1,5 +1,5 @@
 import CartButton from './CartButton/CartButton';
-import './Header.css'
+import '../../styles/Header.css';
 
 const Header = (props) => {
     return (

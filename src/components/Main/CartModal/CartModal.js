@@ -1,7 +1,7 @@
 import { useContext , useState , useEffect} from "react";
 import Button from "../../UI/Button/Button";
 import CartItem from "./CartItem/CartItem";
-import "./CartModal.css";
+import '../../../styles/CartModal.css';
 import cartContext from "../../../contexts/cart-context";
 
 
@@ -49,7 +49,7 @@ const CartModal = (props) => {
                 <p>${totalAmount}</p>
             </div>
             <div className="modal-btns-container">
-                <Button onClick={props.onHideCartModal} title="Close" className="btn-primary close-btn"></Button>
+                <Button onClick={props.onHideCartModal} title="Close" className="close-btn btn-primary"></Button>
                 <Button onClick={order} title="Order" className="btn-primary order-btn" disabled={isCartEmpty}></Button>
             </div>
 

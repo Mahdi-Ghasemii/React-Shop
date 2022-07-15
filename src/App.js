@@ -73,8 +73,6 @@ const cartItemsChangeHandler = (state, action) => {
 
 function App() {
 
-
-
   const [isModalShown , setIsModalShown] = useState(false);
   
   const addItemToCartsHandler = (item) => {

@@ -2,7 +2,11 @@ import { Fragment } from "react";
 import background_img from "../../assets/meals.jpg"
 import Introduct from "./Intro/Introduct";
 import Menu from "./Menu/Menu";
-import "./Main.css"
+import "../../styles/Main.css"
+import Button from "../UI/Button/Button";
+
+
+
 
 const Main = () => {
 

@@ -1,0 +1,76 @@
+.modal-btns-container {
+  width: 300em;
+  margin-left: 68%;
+}
+
+.modal-btns-container > Button {
+  margin-right: 4px;
+}
+
+.cart-modal-total-amount {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.cart-items-container {
+  margin-bottom: 1em;
+}
+
+.menu-cart-title, .menu-cart-price, .amount-label {
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.menu-cart-amount {
+  margin: 10px 0;
+}
+
+.amount-input {
+  width: 5rem;
+  height: 2rem;
+  margin-left: 1em;
+}
+
+.menu-cart-price {
+  font-size: 1.2rem;
+  color: rgb(255, 68, 0);
+}
+
+.cart-modal {
+  position: fixed;
+  top: 20vh;
+  left: 0;
+  right: 0;
+  width: 40%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  margin: auto;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=CartModal.css.map */

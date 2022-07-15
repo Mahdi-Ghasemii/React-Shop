@@ -1,44 +1,37 @@
+import { useState } from "react";
 import MenuCart from "./MenuCart/MenuCart";
-import "./Menu.css"
+import "../../../styles/Menu.css"
+import Button from "../../UI/Button/Button";
+import Loading from "./Loading";
 
-const menu_info = [
-    {
-        name: "Sushi",
-        details: "Finest fish and veggist",
-        price : 22.99,
-        number: 0,
-        id: 1
-    },
-    {
-        name: "Rice",
-        details: "Finest fish and veggist",
-        price : 34.78,
-        number: 0,
-        id: 2
-    },
-    {
-        name: "Chicken",
-        details: "Finest fish and veggist",
-        price : 87.45,
-        number: 0,
-        id: 3
-    },
-    {
-        name: "Fish",
-        details: "Finest fish and veggist",
-        price : 21.32,
-        number: 0,
-        id: 4
-    },
-]
-
-console.log(...(menu_info))
 const Menu = (props) => {
+    
+    const [jsonData , setJsonData] = useState([]);
+    const [isLoading , setIsLoading] = useState(false);
+    const [error , setError] = useState("");
 
+    const fetchData = async() => {
+        try {
+            setIsLoading(true);
+            const fetchedData = await fetch("https://fakestoreapi.com/products");
+            const tempJsonData = await fetchedData.json();
+            setJsonData(tempJsonData);
+            console.log(jsonData);
+            return jsonData;
+            
+        } 
+        catch (error) {
+            console.log(error);
+            setError(error);
+        }
+    
+    }
     return (
         <section className="menu">
+        {isLoading && <Loading></Loading>}
+        {error && <p>{error}</p>}
         {
-            menu_info.map(menu => {
+            jsonData.map(menu => {
                 return (
                 <MenuCart
                     {...menu}>
@@ -46,6 +39,8 @@ const Menu = (props) => {
                 );       
             })
         }
+        <Button title="Fetch" className="close-btn btn-primary" onClick={fetchData}></Button>
+
         </section>
     );
 }

@@ -1,0 +1,43 @@
+.btn {
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.btn-primary {
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 0em;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  width: 3.5rem;
+  height: 2rem;
+  border-radius: 0em;
+  font-size: 4px;
+  margin-right: 4px;
+}
+
+.btn:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: auto;
+}
+
+.close-btn, .fetch-btn, .btn-secondary {
+  color: #8a2b06;
+  background-color: white;
+  border: #8a2b06 solid 1px;
+}
+
+.order-btn {
+  background-color: #8a2b06;
+  color: white;
+}
+
+.fetch-btn {
+  margin: auto;
+}/*# sourceMappingURL=Button.css.map */

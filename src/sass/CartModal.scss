@@ -1,3 +1,9 @@
+@mixin flex-type-1(){
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .modal-btns-container{
     width: 300em;
     margin-left: 68%;
@@ -7,9 +13,8 @@
 }
 .cart-modal-total-amount{
     font-size: 30px;
-    font-weight: bolder;
-    display: flex;
-    justify-content: space-between;
+    font-weight: bold;
+    @include flex-type-1();
     margin-bottom: 1em;
 }
 .cart-items-container{
@@ -25,12 +30,12 @@
     margin: 10px 0;
 }
 .amount-input {
-    width: 5em;
-    height: 2em;
+    width: 5rem;
+    height: 2rem;
     margin-left: 1em;
 }
 .menu-cart-price{
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: rgb(255, 68, 0);
 }
 

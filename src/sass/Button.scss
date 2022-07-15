@@ -1,0 +1,43 @@
+$color-primary: #8a2b06;
+$white : white;
+@mixin buttons-mixin($width , $height, $fontSize) {
+    width: $width;
+    height: $height;
+    border-radius: 0em;
+    font-size: $fontSize;
+}
+.btn{
+    cursor: pointer;
+    color: $white;
+    border: none;
+}
+.btn-primary{
+    @include buttons-mixin(8rem, 2.5rem, 2rem);
+    font-weight: bold;
+    // color: $color-primary;
+}
+.btn-secondary{
+    @extend .close-btn;
+    @include buttons-mixin(3.5rem, 2rem, 4px);
+    margin-right: 4px;
+}
+.btn:disabled{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: auto;
+}
+
+.close-btn{
+    color: $color-primary;
+    background-color: $white;
+    border : $color-primary solid 1px;
+}
+.order-btn{
+    background-color: $color-primary;
+    color: $white;
+}
+.fetch-btn{
+    @extend .close-btn;
+    margin: auto;
+}

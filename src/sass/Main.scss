@@ -3,10 +3,8 @@
     height: 25rem;
     z-index: 0;
     overflow: hidden;
-  }
-  
-  img.main-image {
     width: 110%;
     object-fit: cover;
     transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
-  }
+}
+  
