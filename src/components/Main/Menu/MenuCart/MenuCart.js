@@ -1,9 +1,10 @@
 import { useState , useContext } from "react";
-import Button from "../../../UI/Button/Button";
 import cartContext from "../../../../contexts/cart-context";
 import '../../../../styles/MenuCart.css'
+import "../../../../styles/Button.css";
 
 const MenuCart = (props) => {
+    console.log(props.id)
     const id = `amount-${props.id}`;
     const cartsInfo =  useContext(cartContext);
     const [amount , setAmount] = useState(1);
@@ -15,7 +16,7 @@ const MenuCart = (props) => {
         console.log(amount , props.price)
         cartsInfo.addItem({ 
             "id" : props.id ,
-            "name" : props.ti ,
+            "name" : props.title ,
             "price" : +props.price ,
             "number" :+amount
         });
@@ -24,16 +25,16 @@ const MenuCart = (props) => {
     return (
         <section key={props.id} className="menu-cart">
             <div>
-                <p className="menu-cart-title">{props.name}</p>
-                <i>{props.details}</i>
+                <p className="menu-cart-title">{props.title}</p>
+                <i>{props.description}</i>
                 <p className="menu-cart-price">$ {props.price}</p>
             </div>
-            <div>
+            <div className="menu-cart-right">
                 <div className="menu-cart-amount">
                     <label className="amount-label" htmlFor={id}>Amount</label>
                     <input type="number" onChange={amountChangeHandler} className="amount-input" id={id}  name={id} value={amount}></input>
                 </div>
-                <Button onClick={addBtnClickHandler} title="+ Add" className="btn-primary order-btn"></Button>
+                <button onClick={addBtnClickHandler} title="+ Add" className="btn-primary order-btn"></button>
             </div>
         </section>
     );

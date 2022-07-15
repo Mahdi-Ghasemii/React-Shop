@@ -3,7 +3,7 @@ $white : white;
 @mixin buttons-mixin($width , $height, $fontSize) {
     width: $width;
     height: $height;
-    border-radius: 0em;
+    border-radius: 5rem;
     font-size: $fontSize;
 }
 .btn{
@@ -12,13 +12,13 @@ $white : white;
     border: none;
 }
 .btn-primary{
-    @include buttons-mixin(8rem, 2.5rem, 2rem);
-    font-weight: bold;
+    @include buttons-mixin(8rem, 2.5rem, 1rem);
+    font-weight: bolder;
     // color: $color-primary;
 }
 .btn-secondary{
     @extend .close-btn;
-    @include buttons-mixin(3.5rem, 2rem, 4px);
+    @include buttons-mixin(3.5rem, 2rem, 8px);
     margin-right: 4px;
 }
 .btn:disabled{
@@ -27,7 +27,6 @@ $white : white;
     color: #666666;
     cursor: auto;
 }
-
 .close-btn{
     color: $color-primary;
     background-color: $white;
@@ -40,4 +39,7 @@ $white : white;
 .fetch-btn{
     @extend .close-btn;
     margin: auto;
+    position: relative;
+    right: 0;
+    left: 0;
 }

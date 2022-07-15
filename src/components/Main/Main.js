@@ -3,8 +3,7 @@ import background_img from "../../assets/meals.jpg"
 import Introduct from "./Intro/Introduct";
 import Menu from "./Menu/Menu";
 import "../../styles/Main.css"
-import Button from "../UI/Button/Button";
-
+import "../../styles/Button.css"
 
 
 

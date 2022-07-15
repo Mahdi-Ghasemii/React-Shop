@@ -1,8 +1,8 @@
 import { useState } from "react";
 import MenuCart from "./MenuCart/MenuCart";
 import "../../../styles/Menu.css"
-import Button from "../../UI/Button/Button";
 import Loading from "./Loading";
+import '../../../styles/Button.css';
 
 const Menu = (props) => {
     
@@ -14,22 +14,23 @@ const Menu = (props) => {
         try {
             setIsLoading(true);
             const fetchedData = await fetch("https://fakestoreapi.com/products");
-            const tempJsonData = await fetchedData.json();
-            setJsonData(tempJsonData);
-            console.log(jsonData);
+            setJsonData(await fetchedData.json());
+            setIsLoading(false);
+            // setJsonData(tempJsonData);
+            // console.log(tempJsonData);
             return jsonData;
             
         } 
-        catch (error) {
-            console.log(error);
-            setError(error);
+        catch (err) {
+            console.log(err);
+            setError(err);
         }
     
     }
     return (
         <section className="menu">
         {isLoading && <Loading></Loading>}
-        {error && <p>{error}</p>}
+        {/* {error && <p>{error}</p>} */}
         {
             jsonData.map(menu => {
                 return (
@@ -39,7 +40,7 @@ const Menu = (props) => {
                 );       
             })
         }
-        <Button title="Fetch" className="close-btn btn-primary" onClick={fetchData}></Button>
+        <button title="Fetch" className="close-btn btn-primary" onClick={fetchData}></button>
 
         </section>
     );

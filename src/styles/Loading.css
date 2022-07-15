@@ -2,12 +2,6 @@ html, body {
   height: 100%;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .spinner {
   animation: rotator 1.4s linear infinite;
 }
