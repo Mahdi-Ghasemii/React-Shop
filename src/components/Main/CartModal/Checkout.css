@@ -33,11 +33,6 @@
     justify-content: flex-start;
   }
   
-  .actions button:hover,
-  .actions button:active {
-    background-color: #ffe6dc;
-  }
-  
   .actions .submit {
     border: 1px solid #5a1a01;
     background-color: #5a1a01;

@@ -10,6 +10,7 @@ const Menu = (props) => {
     const [isLoading , setIsLoading] = useState(false);
     const [error , setError] = useState("");
 
+    
     const fetchData = async() => {
         try {
             setIsLoading(true);
@@ -23,24 +24,29 @@ const Menu = (props) => {
         }
         setIsLoading(false);
     }
+    
+    useState(() => {
+        fetchData();
+    } , []);
 
-    console.log("message ",error.message)
+    
     return (
-        <section className="menu">
-        {isLoading && <Loading></Loading>}
-        {error && <p className="error">{error.message}</p>}
-        {!isLoading && !error &&
-            jsonData.map(menu => {
-                return (
-                <MenuCart
-                    {...menu}>
-                </MenuCart> 
-                );       
-            })
-        }
-        <button className="fetch-btn btn-primary" onClick={fetchData}>Fetch</button>
-
-        </section>
+        <>
+            <section className="menu">
+            {isLoading && <Loading></Loading>}
+            {error && <p className="error">{error.message}</p>}
+            {!isLoading && !error &&
+                jsonData.map(menu => {
+                    return (
+                    <MenuCart
+                        {...menu}>
+                    </MenuCart> 
+                    );       
+                })
+            }
+            </section>
+            {/* <button className="btn-primary fetch-btn" onClick={fetchData}>Fetch</button> */}
+        </>
     );
 }
 

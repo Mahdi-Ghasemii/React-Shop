@@ -42,14 +42,15 @@ $white : white;
 .cancel-btn{
     @extend .close-btn;
 }
-// .fetch-btn{
-//     @extend .close-btn;
-//     border : royalblue solid 1px;
-//     color: royalblue;
-//     display: block;
-//     margin: auto;
-//     margin-top: 2rem;
-// }
+.fetch-btn{
+    @extend .close-btn;
+    border : royalblue solid 1px;
+    background-color: royalblue;
+    color: white;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+}
 button:disabled,button[disabled]{
     border: 1px solid #999999 !important;
     background-color: #cccccc !important;

@@ -8,7 +8,7 @@ import Checkout from "./Checkout";
 
 const CartModal = (props) => {
     
-    const [isCartEmpty , setIsCartEmpty] = useState(true);
+    const [isCartEmpty , setIsCartEmpty] = useState(false);
     const [isCheckingOut , setIsCheckingOut] = useState(false);
 
     const cartsInfo = useContext(cartContext);
@@ -16,7 +16,6 @@ const CartModal = (props) => {
     total + (item.number * item.price), 0);
     totalAmount = totalAmount.toFixed(2);
     
-    console.log("isCartEmpty" ,isCartEmpty)
     const addItemHandler = (id) => {
         const itemIndex = cartsInfo.items.findIndex(item => item.id === id);
         const newPrice = cartsInfo.items[itemIndex].price / cartsInfo.items[itemIndex].number;
@@ -30,13 +29,13 @@ const CartModal = (props) => {
     }
 
     useEffect(() => {
-        if(!cartsInfo.items.length && !isCartEmpty){
-            setIsCartEmpty(true);
-        }
-        else if (cartsInfo.items.length && isCartEmpty){
+        if(cartsInfo.items.length){
             setIsCartEmpty(false);
         }
-    },[cartsInfo.items.length , isCartEmpty])
+        else {
+            setIsCartEmpty(true);
+        }
+    },[Boolean(cartsInfo.items.length)])
 
     return (
         <div className="cart-modal">
@@ -51,7 +50,7 @@ const CartModal = (props) => {
                 <p>Total Amount</p>
                 <p>${totalAmount}</p>
             </div>
-            {isCheckingOut && <Checkout onCancel={props.onHideCartModal}/>}
+            {isCheckingOut && <Checkout onCancel={setIsCheckingOut}/>}
             {!isCheckingOut && 
             <div className="modal-btns-container">
                 <button onClick={props.onHideCartModal} className="btn-primary close-btn">Close</button>

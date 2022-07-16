@@ -40,11 +40,12 @@
 }
 
 .cart-modal {
-  height: 25rem;
+  min-height: 5rem;
+  max-height: 35rem;
   overflow-y: scroll;
   overflow-x: visible;
   position: fixed;
-  top: 20vh;
+  top: 15vh;
   left: 0;
   right: 0;
   width: 40%;

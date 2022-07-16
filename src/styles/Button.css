@@ -20,7 +20,7 @@
   margin-right: 4px;
 }
 
-.close-btn, .cancel-btn, .btn-secondary {
+.close-btn, .fetch-btn, .cancel-btn, .btn-secondary {
   color: #8a2b06;
   background-color: white;
   border: #8a2b06 solid 1px;
@@ -35,6 +35,15 @@
   background-color: #8a2b06;
   color: white;
   margin-top: 3rem;
+}
+
+.fetch-btn {
+  border: royalblue solid 1px;
+  background-color: royalblue;
+  color: white;
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
 }
 
 button:disabled, button[disabled] {

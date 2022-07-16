@@ -71,7 +71,7 @@ const Checkout = (props) => {
         <input onChange={onCityClickHandler} type='text' id='city' />
       </div>
       <div className="actions">
-        <button type='button' onClick={props.onCancel} className="btn-primary cancel-btn">Cancel</button>
+        <button type='button' onClick={props.onCancel.bind(null , false)} className="btn-primary cancel-btn">Cancel</button>
         <button disabled={!isFromValid} className="btn-primary order-btn" type='submit'>Confirm</button>
       </div>
     </form>
