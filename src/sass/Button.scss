@@ -1,31 +1,28 @@
 $color-primary: #8a2b06;
 $white : white;
+
+.btn{
+    cursor: pointer;
+    color: $white;
+    border: none;
+}
+
 @mixin buttons-mixin($width , $height, $fontSize) {
     width: $width;
     height: $height;
     border-radius: 5rem;
     font-size: $fontSize;
 }
-.btn{
-    cursor: pointer;
-    color: $white;
-    border: none;
-}
 .btn-primary{
+    @extend .btn;
     @include buttons-mixin(8rem, 2.5rem, 1rem);
-    font-weight: bolder;
+    font-weight: bold;
     // color: $color-primary;
 }
 .btn-secondary{
-    @extend .close-btn;
-    @include buttons-mixin(3.5rem, 2rem, 8px);
+    @extend .btn , .close-btn;
+    @include buttons-mixin(3.5rem, 2rem, 20px);
     margin-right: 4px;
-}
-.btn:disabled{
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
-    cursor: auto;
 }
 .close-btn{
     color: $color-primary;
@@ -36,10 +33,26 @@ $white : white;
     background-color: $color-primary;
     color: $white;
 }
-.fetch-btn{
+
+.add-btn{
+    background-color: $color-primary;
+    color: $white;
+    margin-top: 3rem;
+}
+.cancel-btn{
     @extend .close-btn;
-    margin: auto;
-    position: relative;
-    right: 0;
-    left: 0;
+}
+// .fetch-btn{
+//     @extend .close-btn;
+//     border : royalblue solid 1px;
+//     color: royalblue;
+//     display: block;
+//     margin: auto;
+//     margin-top: 2rem;
+// }
+button:disabled,button[disabled]{
+    border: 1px solid #999999 !important;
+    background-color: #cccccc !important;
+    color: #666666;
+    cursor: auto;
 }

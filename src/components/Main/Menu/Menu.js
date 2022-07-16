@@ -15,23 +15,21 @@ const Menu = (props) => {
             setIsLoading(true);
             const fetchedData = await fetch("https://fakestoreapi.com/products");
             setJsonData(await fetchedData.json());
-            setIsLoading(false);
-            // setJsonData(tempJsonData);
-            // console.log(tempJsonData);
-            return jsonData;
             
         } 
         catch (err) {
-            console.log(err);
+            console.log("errori ke dade ..." ,err);
             setError(err);
         }
-    
+        setIsLoading(false);
     }
+
+    console.log("message ",error.message)
     return (
         <section className="menu">
         {isLoading && <Loading></Loading>}
-        {/* {error && <p>{error}</p>} */}
-        {
+        {error && <p className="error">{error.message}</p>}
+        {!isLoading && !error &&
             jsonData.map(menu => {
                 return (
                 <MenuCart
@@ -40,7 +38,7 @@ const Menu = (props) => {
                 );       
             })
         }
-        <button title="Fetch" className="close-btn btn-primary" onClick={fetchData}></button>
+        <button className="fetch-btn btn-primary" onClick={fetchData}>Fetch</button>
 
         </section>
     );

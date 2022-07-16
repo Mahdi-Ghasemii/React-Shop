@@ -1,6 +1,6 @@
 .modal-btns-container {
-  width: 300em;
-  margin-left: 68%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .modal-btns-container > Button {
@@ -40,6 +40,9 @@
 }
 
 .cart-modal {
+  height: 25rem;
+  overflow-y: scroll;
+  overflow-x: visible;
   position: fixed;
   top: 20vh;
   left: 0;

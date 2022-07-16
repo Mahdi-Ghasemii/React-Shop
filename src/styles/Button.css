@@ -1,4 +1,4 @@
-.btn {
+.btn, .btn-secondary, .btn-primary {
   cursor: pointer;
   color: white;
   border: none;
@@ -9,25 +9,18 @@
   height: 2.5rem;
   border-radius: 5rem;
   font-size: 1rem;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .btn-secondary {
   width: 3.5rem;
   height: 2rem;
   border-radius: 5rem;
-  font-size: 8px;
+  font-size: 20px;
   margin-right: 4px;
 }
 
-.btn:disabled {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-  cursor: auto;
-}
-
-.close-btn, .fetch-btn, .btn-secondary {
+.close-btn, .cancel-btn, .btn-secondary {
   color: #8a2b06;
   background-color: white;
   border: #8a2b06 solid 1px;
@@ -38,9 +31,15 @@
   color: white;
 }
 
-.fetch-btn {
-  margin: auto;
-  position: relative;
-  right: 0;
-  left: 0;
+.add-btn {
+  background-color: #8a2b06;
+  color: white;
+  margin-top: 3rem;
+}
+
+button:disabled, button[disabled] {
+  border: 1px solid #999999 !important;
+  background-color: #cccccc !important;
+  color: #666666;
+  cursor: auto;
 }/*# sourceMappingURL=Button.css.map */

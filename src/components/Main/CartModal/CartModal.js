@@ -1,17 +1,20 @@
 import { useContext , useState , useEffect} from "react";
-import CartItem from "./CartItem/CartItem";
+import CartItem from "./CartItem";
 import '../../../styles/CartModal.css';
 import cartContext from "../../../contexts/cart-context";
 import "../../../styles/Button.css";
+import Checkout from "./Checkout";
 
 
 const CartModal = (props) => {
     
     const [isCartEmpty , setIsCartEmpty] = useState(true);
+    const [isCheckingOut , setIsCheckingOut] = useState(false);
+
     const cartsInfo = useContext(cartContext);
     let totalAmount = cartsInfo.items.reduce((total,item) => 
     total + (item.number * item.price), 0);
-    totalAmount.toFixed(2);
+    totalAmount = totalAmount.toFixed(2);
     
     console.log("isCartEmpty" ,isCartEmpty)
     const addItemHandler = (id) => {
@@ -23,7 +26,7 @@ const CartModal = (props) => {
         cartsInfo.removeItem(id);
     }
     const order = () => {
-        console.log("Order ...")
+        setIsCheckingOut(true);
     }
 
     useEffect(() => {
@@ -33,7 +36,7 @@ const CartModal = (props) => {
         else if (cartsInfo.items.length && isCartEmpty){
             setIsCartEmpty(false);
         }
-    },[cartsInfo.items.length])
+    },[cartsInfo.items.length , isCartEmpty])
 
     return (
         <div className="cart-modal">
@@ -48,11 +51,12 @@ const CartModal = (props) => {
                 <p>Total Amount</p>
                 <p>${totalAmount}</p>
             </div>
+            {isCheckingOut && <Checkout onCancel={props.onHideCartModal}/>}
+            {!isCheckingOut && 
             <div className="modal-btns-container">
-                <button onClick={props.onHideCartModal} title="Close" className="close-btn btn-primary"></button>
-                <button onClick={order} title="Order" className="order-btn" disabled={isCartEmpty}></button>
-            </div>
-
+                <button onClick={props.onHideCartModal} className="btn-primary close-btn">Close</button>
+                <button onClick={order} className="btn-primary order-btn" disabled={isCartEmpty}>Order</button>
+            </div>}
         </div>
 
     );

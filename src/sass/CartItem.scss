@@ -2,9 +2,23 @@
     background-color: white;
     margin-top: 8px;
 
-    header{
+    h2{
+        margin-bottom: 2rem ;
+    }
+    .plus-minuse-btns{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .item-part-container{
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
     }
 }
+.item-endline{
+    height: 4px;
+    width: 95%;
+    margin: 2.5rem auto 2.5rem;
+    background-color: #8a2b06;
+}
+
+

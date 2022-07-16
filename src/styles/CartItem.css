@@ -2,8 +2,21 @@
   background-color: white;
   margin-top: 8px;
 }
-.cart-item header {
+.cart-item h2 {
+  margin-bottom: 2rem;
+}
+.cart-item .plus-minuse-btns {
+  display: flex;
+  justify-content: flex-end;
+}
+.cart-item .item-part-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+}
+
+.item-endline {
+  height: 4px;
+  width: 95%;
+  margin: 2.5rem auto 2.5rem;
+  background-color: #8a2b06;
 }/*# sourceMappingURL=CartItem.css.map */

@@ -24,17 +24,19 @@ const MenuCart = (props) => {
 
     return (
         <section key={props.id} className="menu-cart">
-            <div>
+            <div className="menu-cart-left">
                 <p className="menu-cart-title">{props.title}</p>
                 <i>{props.description}</i>
                 <p className="menu-cart-price">$ {props.price}</p>
             </div>
             <div className="menu-cart-right">
                 <div className="menu-cart-amount">
-                    <label className="amount-label" htmlFor={id}>Amount</label>
-                    <input type="number" onChange={amountChangeHandler} className="amount-input" id={id}  name={id} value={amount}></input>
+                    <div className="menu-cart-amount-part1">
+                        <label className="amount-label" htmlFor={id}>Amount</label>
+                        <input type="number" onChange={amountChangeHandler} className="amount-input" id={id}  name={id} value={amount}></input>
+                    </div>
+                    <button onClick={addBtnClickHandler} className="btn-primary add-btn">+Add</button>
                 </div>
-                <button onClick={addBtnClickHandler} title="+ Add" className="btn-primary order-btn"></button>
             </div>
         </section>
     );

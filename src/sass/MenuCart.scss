@@ -5,15 +5,6 @@
     /*flex for right and left side of menu-cart : */
     display: flex;
     justify-content: space-between;
-    
-    i{
-        height: 2rem;
-        overflow: hidden;
-        width: 1rem;
-    }
-}
-.menu-cart-right{
-    align-self: flex-end;
 }
 .menu-cart-title , .menu-cart-price , .amount-label{
     font-weight: bold;
@@ -28,6 +19,21 @@
     margin-left: 1em;
 }
 .menu-cart-price{
-    font-size: 1.2em;
+    font-size: 1.5rem;
     color: rgb(255, 68, 0);
+}
+.menu-cart-left{
+    text-align: justify;
+    max-width: 80%;
+}
+.menu-cart-right{
+    max-width: 15%;
+}
+.menu-cart-amount-part1{
+    display: flex;
+    align-items: center;
+    input{
+        width: 2rem;
+        border: gray solid 1px;
+    }
 }

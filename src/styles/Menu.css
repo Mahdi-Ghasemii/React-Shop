@@ -3,4 +3,9 @@
   width: 60%;
   margin: 7em auto 0;
   background-color: white;
+}
+.menu .error {
+  font-weight: 200;
+  color: red;
+  text-align: center;
 }/*# sourceMappingURL=Menu.css.map */
